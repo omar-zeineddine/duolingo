@@ -1,20 +1,41 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import CoreComponentImg from "./CoreComponentImg";
+import CoreComponents from "./CoreComponents";
 
-export default function App() {
+const App = () => {
+  const name = "John";
+  const getName = () => {
+    return name;
+  };
+
+  const time = 9;
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View
+      style={{
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+        // backgroundColor: "#0f0f0f",
+      }}
+    >
+      <Text
+        style={{
+          color: "lightskyblue",
+          fontWeight: "bold",
+          fontSize: 15,
+        }}
+      >
+        {time < 12 ? "Good morning" : "Good day"}, my name is {getName()} {"\n"}
+        coming through from React Native at {time}
+      </Text>
+      {/* <CoreComponents /> */}
+      <CoreComponentImg />
     </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
+
+const styles = StyleSheet.create({});

@@ -1,51 +1,14 @@
-import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
+import { Text, View, StyleSheet } from "react-native";
+import ImageOption from "./src/components/ImageOption/";
 
 const App = () => {
   return (
     <View style={styles.root}>
       <Text style={styles.title}>Which of these is the "glass"?</Text>
       <View style={styles.optionsContainer}>
-        <View style={styles.optionContainer}>
-          <Image
-            source={{
-              uri: "https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png",
-            }}
-            style={styles.optionImage}
-            resizeMode="contain"
-          />
-          <Text style={styles.optionText}>Glass</Text>
-        </View>
-        <View style={styles.optionContainer}>
-          <Image
-            source={{
-              uri: "https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png",
-            }}
-            style={styles.optionImage}
-            resizeMode="contain"
-          />
-          <Text style={styles.optionText}>Glass</Text>
-        </View>
-        <View style={styles.optionContainer}>
-          <Image
-            source={{
-              uri: "https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png",
-            }}
-            style={styles.optionImage}
-            resizeMode="contain"
-          />
-          <Text style={styles.optionText}>Glass</Text>
-        </View>
-        <View style={styles.optionContainer}>
-          <Image
-            source={{
-              uri: "https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png",
-            }}
-            style={styles.optionImage}
-            resizeMode="contain"
-          />
-          <Text style={styles.optionText}>Glass</Text>
-        </View>
+        <ImageOption />
+        <ImageOption />
       </View>
     </View>
   );
@@ -74,22 +37,6 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     justifyContent: "space-between",
     alignContent: "space-between", // space between rows, use with flexWrap
-  },
-  optionContainer: {
-    borderWidth: 4,
-    borderBottomWidth: 8,
-    borderColor: "lightgrey",
-    borderRadius: 10,
-
-    // size: container: should take 1/2 width & height of screen
-    width: "48%",
-    height: "48%",
-    alignItems: "center",
-  },
-  optionImage: {
-    backgroundColor: "lightgrey",
-    width: "100%",
-    flex: 1, // take all the space before the text
   },
 });
 

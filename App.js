@@ -12,6 +12,7 @@ const App = () => {
               uri: "https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png",
             }}
             style={styles.optionImage}
+            resizeMode="contain"
           />
           <Text style={styles.optionText}>Glass</Text>
         </View>
@@ -21,6 +22,7 @@ const App = () => {
               uri: "https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png",
             }}
             style={styles.optionImage}
+            resizeMode="contain"
           />
           <Text style={styles.optionText}>Glass</Text>
         </View>
@@ -30,6 +32,7 @@ const App = () => {
               uri: "https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png",
             }}
             style={styles.optionImage}
+            resizeMode="contain"
           />
           <Text style={styles.optionText}>Glass</Text>
         </View>
@@ -39,6 +42,7 @@ const App = () => {
               uri: "https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png",
             }}
             style={styles.optionImage}
+            resizeMode="contain"
           />
           <Text style={styles.optionText}>Glass</Text>
         </View>
@@ -55,6 +59,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 10,
+    paddingTop: 40,
   },
   title: {
     fontSize: 20,
@@ -79,10 +84,12 @@ const styles = StyleSheet.create({
     // size: container: should take 1/2 width & height of screen
     width: "48%",
     height: "48%",
+    alignItems: "center",
   },
   optionImage: {
-    width: 100,
-    height: 100,
+    backgroundColor: "lightgrey",
+    width: "100%",
+    flex: 1, // take all the space before the text
   },
 });
 

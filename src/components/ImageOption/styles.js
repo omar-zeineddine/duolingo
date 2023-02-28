@@ -2,8 +2,8 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   optionContainer: {
-    borderWidth: 4,
-    borderBottomWidth: 8,
+    borderWidth: 2,
+    borderBottomWidth: 4,
     borderColor: "lightgrey",
     borderRadius: 10,
 
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   optionImage: {
-    backgroundColor: "lightgrey",
+    // backgroundColor: "lightgrey",
     width: "100%",
     flex: 1, // take all the space before the text
   },

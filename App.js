@@ -7,8 +7,22 @@ const App = () => {
     <View style={styles.root}>
       <Text style={styles.title}>Which of these is the "glass"?</Text>
       <View style={styles.optionsContainer}>
-        <ImageOption />
-        <ImageOption />
+        <ImageOption
+          image="https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png"
+          text="cup"
+        />
+        <ImageOption
+          image="https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/glass.png"
+          text="glass"
+        />
+        {/* <ImageOption
+          image="https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/coffee.png"
+          text="coffee"
+        />
+        <ImageOption
+          image="https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/milk.png"
+          text="milk"
+        /> */}
       </View>
     </View>
   );
@@ -30,7 +44,7 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
   },
   optionsContainer: {
-    backgroundColor: "#f5f5f5",
+    // backgroundColor: "#f5f5f5",
     width: "100%",
     flex: 1,
     flexDirection: "row",
@@ -39,8 +53,3 @@ const styles = StyleSheet.create({
     alignContent: "space-between", // space between rows, use with flexWrap
   },
 });
-
-// https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png
-// |Glass    | https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/glass.png |
-// |Milk     | https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/milk.png |
-// |Coffee   | https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/coffee.png

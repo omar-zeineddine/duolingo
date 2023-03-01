@@ -1,11 +1,18 @@
 import React from "react";
-import { Text, View, Image } from "react-native";
+import { Text, View, Image, Pressable } from "react-native";
 import styles from "./styles";
 import PropTypes from "prop-types";
 
-const ImageOption = ({ image, text }) => {
+const ImageOption = ({ image, text, isSelected, onPress }) => {
   return (
-    <View style={styles.optionContainer}>
+    <Pressable
+      // onPress={() => console.warn(text)}
+      onPress={onPress}
+      style={[
+        styles.optionContainer,
+        isSelected ? styles.selectedContainer : {},
+      ]}
+    >
       <Image
         source={{
           uri: image,
@@ -13,8 +20,10 @@ const ImageOption = ({ image, text }) => {
         style={styles.optionImage}
         resizeMode="contain"
       />
-      <Text style={styles.optionText}>{text}</Text>
-    </View>
+      <Text style={isSelected ? styles.selectedText : styles.optionText}>
+        {text}
+      </Text>
+    </Pressable>
   );
 };
 
@@ -22,12 +31,16 @@ const ImageOption = ({ image, text }) => {
 ImageOption.propTypes = {
   image: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  isSelected: PropTypes.bool,
+  onPress: PropTypes.func,
 };
 
 // define default properties
 ImageOption.defaultProps = {
   image: "https://picsum.photos/id/870/200/300?grayscale&blur=2",
   text: "Default",
+  isSelected: false,
+  onPress: () => {}, // empty function when null
 };
 
 export default ImageOption;

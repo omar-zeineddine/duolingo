@@ -1,28 +1,20 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import ImageOption from "./src/components/ImageOption/";
+import question from "./data/oneQuestionWithOption";
 
 const App = () => {
   return (
     <View style={styles.root}>
-      <Text style={styles.title}>Which of these is the "glass"?</Text>
+      <Text style={styles.title}>{question?.question}</Text>
       <View style={styles.optionsContainer}>
-        <ImageOption
-          image="https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png"
-          text="cup"
-        />
-        <ImageOption
-          image="https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/glass.png"
-          text="glass"
-        />
-        {/* <ImageOption
-          image="https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/coffee.png"
-          text="coffee"
-        />
-        <ImageOption
-          image="https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/milk.png"
-          text="milk"
-        /> */}
+        {question?.options.map((option) => (
+          <ImageOption
+            key={option?.id}
+            image={option?.image}
+            text={option?.text}
+          />
+        ))}
       </View>
     </View>
   );

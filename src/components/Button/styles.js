@@ -14,6 +14,10 @@ const styles = StyleSheet.create({
     borderBottomWidth: 5,
     borderColor: "#4b9a02",
   },
+  disabledContainer: {
+    backgroundColor: "lightgrey",
+    borderColor: "lightgrey",
+  },
   text: {
     color: "#fff",
     fontSize: 18,

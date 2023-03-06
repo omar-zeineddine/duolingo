@@ -1,21 +1,27 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, Alert, StyleSheet } from "react-native";
 import ImageOption from "./src/components/ImageOption/";
 import Button from "./src/components/Button";
-import question from "./data/oneQuestionWithOption";
+
+import questions from "./data/imageMultipleChoiceQuestions";
 
 const App = () => {
   const [selected, setSelected] = useState(null);
+  const [selectedQuestion, setSelectedQuestion] = useState(questions[0]);
 
   const onButtonPress = () => {
-    console.warn("pressed");
+    if (selected.correct) {
+      Alert.alert("Correct");
+    } else {
+      Alert.alert("Incorrect");
+    }
   };
 
   return (
     <View style={styles.root}>
-      <Text style={styles.title}>{question?.question}</Text>
+      <Text style={styles.title}>{selectedQuestion?.question}</Text>
       <View style={styles.optionsContainer}>
-        {question?.options.map((option) => (
+        {selectedQuestion?.options.map((option) => (
           <ImageOption
             key={option?.id}
             image={option?.image}

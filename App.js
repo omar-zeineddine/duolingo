@@ -13,15 +13,20 @@ const App = () => {
   );
 
   useEffect(() => {
-    // console.warn("useEffect called");
-    setCurrentQuestion(questions[currentQuestionIndex]);
+    if (currentQuestionIndex >= questions.length) {
+      Alert.alert("Quiz Completed");
+      setCurrentQuestionIndex(0);
+    } else {
+      setCurrentQuestion(questions[currentQuestionIndex]);
+    }
   }, [currentQuestionIndex]);
 
   const onButtonPress = () => {
     if (selected.correct) {
-      Alert.alert("Correct");
+      // Alert.alert("Correct");
       // move to next question
       setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setSelected(null);
     } else {
       Alert.alert("Incorrect");
     }

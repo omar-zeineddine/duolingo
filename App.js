@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Text, View, Alert, StyleSheet } from "react-native";
 import ImageOption from "./src/components/ImageOption/";
 import Button from "./src/components/Button";
@@ -7,11 +7,21 @@ import questions from "./data/imageMultipleChoiceQuestions";
 
 const App = () => {
   const [selected, setSelected] = useState(null);
-  const [selectedQuestion, setSelectedQuestion] = useState(questions[0]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState(
+    questions[currentQuestionIndex]
+  );
+
+  useEffect(() => {
+    // console.warn("useEffect called");
+    setCurrentQuestion(questions[currentQuestionIndex]);
+  }, [currentQuestionIndex]);
 
   const onButtonPress = () => {
     if (selected.correct) {
       Alert.alert("Correct");
+      // move to next question
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
       Alert.alert("Incorrect");
     }
@@ -19,9 +29,9 @@ const App = () => {
 
   return (
     <View style={styles.root}>
-      <Text style={styles.title}>{selectedQuestion?.question}</Text>
+      <Text style={styles.title}>{currentQuestion?.question}</Text>
       <View style={styles.optionsContainer}>
-        {selectedQuestion?.options.map((option) => (
+        {currentQuestion?.options?.map((option) => (
           <ImageOption
             key={option?.id}
             image={option?.image}

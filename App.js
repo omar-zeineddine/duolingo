@@ -21,9 +21,21 @@ const App = () => {
     }
   }, [currentQuestionIndex]);
 
+  const onCorrectChoice = () => {
+    setCurrentQuestionIndex(currentQuestionIndex + 1);
+  };
+
+  const onWrongChoice = () => {
+    Alert.alert("Incorrect");
+  };
+
   return (
     <View style={styles.root}>
-      <ImageMultipleChoiceQuestion question={currentQuestion} />
+      <ImageMultipleChoiceQuestion
+        question={currentQuestion}
+        onCorrect={onCorrectChoice}
+        onWrong={onWrongChoice}
+      />
     </View>
   );
 };

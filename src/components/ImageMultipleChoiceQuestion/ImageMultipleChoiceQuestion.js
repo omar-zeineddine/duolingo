@@ -5,7 +5,7 @@ import Button from "../Button";
 import styles from "./styles";
 import PropTypes from "prop-types";
 
-const ImageMultipleChoiceQuestion = ({ question }) => {
+const ImageMultipleChoiceQuestion = ({ question, onCorrect, onWrong }) => {
   const [selected, setSelected] = useState(null);
 
   const onButtonPress = () => {
@@ -13,9 +13,10 @@ const ImageMultipleChoiceQuestion = ({ question }) => {
       // Alert.alert("Correct");
       // move to next question
       //   setCurrentQuestionIndex(currentQuestionIndex + 1);
+      onCorrect();
       setSelected(null);
     } else {
-      Alert.alert("Incorrect");
+      onWrong();
     }
   };
   return (

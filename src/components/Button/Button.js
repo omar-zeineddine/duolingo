@@ -5,7 +5,11 @@ import styles from "./styles";
 
 const Button = ({ text, onPress, disabled }) => {
   return (
-    <Pressable onPress={onPress} style={styles.container}>
+    <Pressable
+      onPress={onPress}
+      style={[styles.container, disabled ? styles.disabledContainer : {}]}
+      disabled={disabled}
+    >
       <Text style={styles.text}>{text}</Text>
     </Pressable>
   );

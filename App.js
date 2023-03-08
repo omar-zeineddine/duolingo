@@ -7,7 +7,7 @@ import ImageMultipleChoiceQuestion from "./src/components/ImageMultipleChoiceQue
 import OpenEndedQuestion from "./src/components/OpenEndedQuestion";
 
 // import questions from "./data/imageMultipleChoiceQuestions";
-import openEndedQuestions from "./data/openEndedQuestions";
+import questions from "./data/openEndedQuestions";
 
 const App = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);

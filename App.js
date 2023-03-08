@@ -3,8 +3,11 @@ import { Text, View, Alert, StyleSheet } from "react-native";
 import ImageOption from "./src/components/ImageOption/";
 import Button from "./src/components/Button";
 
-import questions from "./data/imageMultipleChoiceQuestions";
 import ImageMultipleChoiceQuestion from "./src/components/ImageMultipleChoiceQuestion";
+import OpenEndedQuestion from "./src/components/OpenEndedQuestion";
+
+// import questions from "./data/imageMultipleChoiceQuestions";
+import openEndedQuestions from "./data/openEndedQuestions";
 
 const App = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -31,7 +34,12 @@ const App = () => {
 
   return (
     <View style={styles.root}>
-      <ImageMultipleChoiceQuestion
+      {/* <ImageMultipleChoiceQuestion
+        question={currentQuestion}
+        onCorrect={onCorrectChoice}
+        onWrong={onWrongChoice}
+      /> */}
+      <OpenEndedQuestion
         question={currentQuestion}
         onCorrect={onCorrectChoice}
         onWrong={onWrongChoice}

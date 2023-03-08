@@ -8,14 +8,14 @@ const OpenEndedQuestion = () => {
     <>
       <Text style={styles.title}>Translate this sentence</Text>
       <View style={styles.row}>
-        <Image style={styles.mascot} source={mascot} />
+        <Image style={styles.mascot} source={mascot} resizeMode="contain" />
         <View style={styles.sentenceContainer}>
           <Text style={styles.sentence}>Sentence</Text>
         </View>
 
         {/* Sentence Container */}
-        <TextInput placeholder="type in english" style={styles.textInput} />
       </View>
+      <TextInput placeholder="type in english" style={styles.textInput} />
     </>
   );
 };

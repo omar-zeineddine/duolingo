@@ -7,7 +7,13 @@ import mascot from "../../../assets/images/mascot.png";
 const OpenEndedQuestion = ({ question, onCorrect, onWrong }) => {
   const [input, setInput] = useState("");
   const onButtonPress = () => {
-    console.warn(input);
+    // console.warn(input);
+    if (question.answer.toLowerCase().trim() === input.toLowerCase().trim()) {
+      onCorrect();
+    } else {
+      onWrong();
+    }
+    setInput("");
   };
   return (
     <>

@@ -35,16 +35,20 @@ const App = () => {
 
   return (
     <View style={styles.root}>
-      {/* <ImageMultipleChoiceQuestion
-        question={currentQuestion}
-        onCorrect={onCorrectChoice}
-        onWrong={onWrongChoice}
-      /> */}
-      <OpenEndedQuestion
-        question={currentQuestion}
-        onCorrect={onCorrectChoice}
-        onWrong={onWrongChoice}
-      />
+      {currentQuestion.type === "imageMultipleChoice" ? (
+        <ImageMultipleChoiceQuestion
+          question={currentQuestion}
+          onCorrect={onCorrectChoice}
+          onWrong={onWrongChoice}
+        />
+      ) : null}
+      {currentQuestion.type === "openEnded" ? (
+        <OpenEndedQuestion
+          question={currentQuestion}
+          onCorrect={onCorrectChoice}
+          onWrong={onWrongChoice}
+        />
+      ) : null}
     </View>
   );
 };

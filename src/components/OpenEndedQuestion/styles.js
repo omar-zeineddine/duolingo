@@ -37,5 +37,6 @@ export default StyleSheet.create({
     borderColor: "lightgrey",
     borderRadius: 10,
     padding: 10,
+    fontSize: 16,
   },
 });

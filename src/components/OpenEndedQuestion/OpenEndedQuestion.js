@@ -1,9 +1,11 @@
 import React from "react";
 import { View, Text, TextInput, Image } from "react-native";
+import Button from "../Button";
 import styles from "./styles";
 import mascot from "../../../assets/images/mascot.png";
 
 const OpenEndedQuestion = () => {
+  const onButtonPress = () => {};
   return (
     <>
       <Text style={styles.title}>Translate this sentence</Text>
@@ -16,6 +18,7 @@ const OpenEndedQuestion = () => {
         {/* Sentence Container */}
       </View>
       <TextInput placeholder="type in english" style={styles.textInput} />
+      <Button text="Check" onPress={onButtonPress} disabled={true} />
     </>
   );
 };

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, Alert, StyleSheet } from "react-native";
-import ImageOption from "./src/components/ImageOption/";
-import Button from "./src/components/Button";
+import { View, Alert, StyleSheet } from "react-native";
+// import ImageOption from "./src/components/ImageOption/";
+// import Button from "./src/components/Button";
 
+import Header from "./src/components/Header";
 import ImageMultipleChoiceQuestion from "./src/components/ImageMultipleChoiceQuestion";
 import OpenEndedQuestion from "./src/components/OpenEndedQuestion";
 
@@ -35,6 +36,7 @@ const App = () => {
 
   return (
     <View style={styles.root}>
+      <Header />
       {currentQuestion.type === "imageMultipleChoice" ? (
         <ImageMultipleChoiceQuestion
           question={currentQuestion}

@@ -36,7 +36,7 @@ const App = () => {
 
   return (
     <View style={styles.root}>
-      <Header progress={0.3} />
+      <Header progress={currentQuestionIndex / questions.length} />
       {currentQuestion.type === "IMAGE_MULTIPLE_CHOICE" ? (
         <ImageMultipleChoiceQuestion
           question={currentQuestion}

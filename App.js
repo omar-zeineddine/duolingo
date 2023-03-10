@@ -36,15 +36,15 @@ const App = () => {
 
   return (
     <View style={styles.root}>
-      <Header />
-      {currentQuestion.type === "imageMultipleChoice" ? (
+      <Header progress={0.3} />
+      {currentQuestion.type === "IMAGE_MULTIPLE_CHOICE" ? (
         <ImageMultipleChoiceQuestion
           question={currentQuestion}
           onCorrect={onCorrectChoice}
           onWrong={onWrongChoice}
         />
       ) : null}
-      {currentQuestion.type === "openEnded" ? (
+      {currentQuestion.type === "OPEN_ENDED" ? (
         <OpenEndedQuestion
           question={currentQuestion}
           onCorrect={onCorrectChoice}

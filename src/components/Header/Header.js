@@ -1,12 +1,19 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, StyleSheet } from "react-native";
+import ProgressBar from "../ProgressBar/ProgressBar";
 
-const Header = () => {
+const Header = ({ progress }) => {
   return (
-    <View>
-      <Text>Header</Text>
+    <View style={styles.root}>
+      <ProgressBar progress={progress} />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  root: {
+    flexDirection: "row",
+  },
+});
 
 export default Header;
